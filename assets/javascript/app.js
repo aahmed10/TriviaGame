@@ -2,7 +2,7 @@
 $("#startButton").on("click", function () {
 	playGame.start();
 })
-$(document).ready(function(){
+$(document).ready("click", "#submit", function(){
 	playGame.done();
 })
 
@@ -22,7 +22,7 @@ var questions = [{
 
 }
 ];
-
+// make scoreboard display and set timer 
 var playGame = {
 	correct: 0,
 	incorrect:0, 
@@ -35,7 +35,7 @@ var playGame = {
 			playGame.done();
 		}
 	},
-//start function
+//start function. for loop to run through question  and answerbank and apppend to html to display. need to delete start btn upon clicking start
 	start: function() {
 		timer = setInterval(playGame.countdown, 1000);
 		$("#subWrapper").prepend("<h2>Time Remaining: <span id='counter'>25</span> Seconds</h2>");
@@ -46,7 +46,7 @@ var playGame = {
           $("#subWrapper").append("<input type='radio' name='question-"+i+"' value='+questions[i].answers[j]+'>"+questions[i].answers[j]);
       }
      }
-     $("#subWrapper").append("<br><br><button class='btn btn-warning' id='submit'>SUBMIT</button>");
+     $("#subWrapper").append("<br><br><button class='btn btn-warning' id='submit'>SUBMIT</button>"); //submit btn not functioning properly//
     }, 
     /*if else statements for correct and incorrect choices 
 with counter for wins and losses as well as unanswered */
@@ -73,7 +73,7 @@ with counter for wins and losses as well as unanswered */
         }
       });
       this.result();
-	},
+	}, //append scoreboard display to score checking condition
 	result: function(){
         clearInterval(timer);
         $("#subWrapper h2").remove();
