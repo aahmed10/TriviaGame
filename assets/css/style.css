@@ -1,7 +1,7 @@
 #container {
     height: fit-content;
     width: 80%;
-    background-color: blue;
+    background-color: black;
     text-align: center;
     margin: 90px;
     border-radius: 25px;
@@ -12,11 +12,11 @@
 
 body{
     color: #efc834;
-    background: url("../images/background.jpg");
+    background: url("../images/hardwood.jpg");
 }
 
 .btn {
-    background-color: #efc834;
-    color: yellow;
+    background-color: orange;
+    color: orange;
 
 }
