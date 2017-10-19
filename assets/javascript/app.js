@@ -2,8 +2,9 @@
 $("#startButton").on("click", function () {
 	playGame.start();
 })
-$(document).ready("click", "#submit", function(){
-	playGame.done();
+
+$(document).on("click", "#submit", function(){
+	playGame.done(); 
 })
 
 // define variables for q and a's 
@@ -53,23 +54,23 @@ with counter for wins and losses as well as unanswered */
     done: function() {
       $.each($("input[name='question-0']:checked"), function(){
         if($(this).val() == questions[0].correctAnswer) {
-          play.correct++;
+          playGame.correct++;
           } else {
-            play.incorrect++;
+            playGame.incorrect++;
           }
       });
       $.each($("input[name='question-1']:checked"), function(){
         if($(this).val() == questions[1].correctAnswer) {
-        play.correct++;
+        playGame.correct++;
         } else {
-          play.incorrect++;
+          playGame.incorrect++;
         }
       });
       $.each($("input[name='question-2']:checked"), function(){
         if($(this).val() == questions[2].correctAnswer) {
-        play.correct++;
+        playGame.correct++;
         } else {
-          play.incorrect++; 
+          playGame.incorrect++; 
         }
       });
       this.result();
